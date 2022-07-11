@@ -6,10 +6,10 @@ import { iUser } from '../models/user-model';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class ApiUsersService {
   apiUrl: string;
   constructor(private http: HttpClient) {
-    this.apiUrl = 'http://localhost:3400/user/';
+    this.apiUrl = 'http://localhost:3453/user/';
   }
 
   addUser(user: iUser): Observable<{ user: iUser; token: string }> {
@@ -33,8 +33,8 @@ export class ApiService {
     return this.http.get(this.apiUrl + id) as Observable<iUser>;
   }
 
-  updateUser(user: iUser): Observable<iUser> {
-    return this.http.patch(this.apiUrl + user._id, user) as Observable<iUser>;
+  updateUser(id: iUser['_id'], user: iUser): Observable<iUser> {
+    return this.http.patch(this.apiUrl + id, user) as Observable<iUser>;
   }
 
   deleteUser(): Observable<iUser> {
