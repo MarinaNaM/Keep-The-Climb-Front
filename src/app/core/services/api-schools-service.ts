@@ -6,7 +6,7 @@ import { iSchool } from '../models/school-model';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class ApiSchoolsService {
   apiUrl: string;
   constructor(private http: HttpClient) {
     this.apiUrl = 'http://localhost:3453/school/';
