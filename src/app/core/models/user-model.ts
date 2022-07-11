@@ -29,5 +29,6 @@ export class UserModel implements iUser {
 }
 
 export interface iUserState {
-  users: ReadonlyArray<iUser>;
+  user: iUser;
+  token: string;
 }
