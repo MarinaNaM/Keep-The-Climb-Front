@@ -6,7 +6,7 @@ import { iSector } from '../models/sector-model';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class ApiSectorsService {
   apiUrl: string;
   constructor(private http: HttpClient) {
     this.apiUrl = 'http://localhost:3453/sector/';
