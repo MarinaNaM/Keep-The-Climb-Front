@@ -6,7 +6,7 @@ import { iRoute } from '../models/route-model';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class ApiRoutesService {
   apiUrl: string;
   constructor(private http: HttpClient) {
     this.apiUrl = 'http://localhost:3453/route/';
@@ -20,9 +20,9 @@ export class ApiService {
     return this.http.get(this.apiUrl + id) as Observable<iRoute>;
   }
 
-  voteRoute(route: iRoute): Observable<iRoute> {
+  voteRoute(id: iRoute['_id'], route: iRoute): Observable<iRoute> {
     return this.http.patch(
-      this.apiUrl + 'voteRoute/' + route._id,
+      this.apiUrl + 'voteRoute/' + id,
       route.voteGrade
     ) as Observable<iRoute>;
   }
