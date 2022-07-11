@@ -9,7 +9,7 @@ import { iUser } from '../models/user-model';
 export class ApiUsersService {
   apiUrl: string;
   constructor(private http: HttpClient) {
-    this.apiUrl = 'http://localhost:3400/user/';
+    this.apiUrl = 'http://localhost:3453/user/';
   }
 
   addUser(user: iUser): Observable<{ user: iUser; token: string }> {

@@ -46,11 +46,11 @@ describe('UsersService', () => {
       });
 
       const req = httpTestingController.expectOne({
-        url: 'http://localhost:3400/user/',
+        url: 'http://localhost:3453/user/',
         method: 'POST',
       });
 
-      expect(req.request.url).toBe('http://localhost:3400/user/');
+      expect(req.request.url).toBe('http://localhost:3453/user/');
 
       req.flush(mockUser);
     });
@@ -63,11 +63,11 @@ describe('UsersService', () => {
       });
 
       const req2 = httpTestingController.expectOne({
-        url: 'http://localhost:3400/user/login',
+        url: 'http://localhost:3453/user/login',
         method: 'POST',
       });
 
-      expect(req2.request.url).toBe('http://localhost:3400/user/login');
+      expect(req2.request.url).toBe('http://localhost:3453/user/login');
 
       req2.flush(mockUser);
     });
@@ -80,11 +80,11 @@ describe('UsersService', () => {
       });
 
       const req3 = httpTestingController.expectOne({
-        url: 'http://localhost:3400/user/id',
+        url: 'http://localhost:3453/user/id',
         method: 'GET',
       });
 
-      expect(req3.request.url).toBe('http://localhost:3400/user/id');
+      expect(req3.request.url).toBe('http://localhost:3453/user/id');
 
       req3.flush(mockUser);
     });
@@ -97,11 +97,11 @@ describe('UsersService', () => {
       });
 
       const req4 = httpTestingController.expectOne({
-        url: 'http://localhost:3400/user/id',
+        url: 'http://localhost:3453/user/id',
         method: 'PATCH',
       });
 
-      expect(req4.request.url).toBe('http://localhost:3400/user/id');
+      expect(req4.request.url).toBe('http://localhost:3453/user/id');
 
       req4.flush(mockUser);
     });
@@ -114,11 +114,11 @@ describe('UsersService', () => {
       });
 
       const req5 = httpTestingController.expectOne({
-        url: 'http://localhost:3400/user/',
+        url: 'http://localhost:3453/user/',
         method: 'DELETE',
       });
 
-      expect(req5.request.url).toBe('http://localhost:3400/user/');
+      expect(req5.request.url).toBe('http://localhost:3453/user/');
 
       req5.flush(mockUser);
     });
