@@ -6,6 +6,7 @@ import { LoginButtonComponent } from './login-button/login-button.component';
 import { SignInButtonComponent } from './sign-in-button/sign-in-button.component';
 import { WithoutLoginButtonComponent } from './without-login-button/without-login-button.component';
 import { LoginDataFormComponent } from './login-data-form/login-data-form.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { LoginDataFormComponent } from './login-data-form/login-data-form.compon
     LoginButtonComponent,
     SignInButtonComponent,
     WithoutLoginButtonComponent,
-    LoginDataFormComponent
+    LoginDataFormComponent,
+    LandingPageComponent
   ],
   imports: [
     CommonModule,
