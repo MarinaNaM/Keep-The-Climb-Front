@@ -6,12 +6,14 @@
     [(ngModel)]="userData.email"
   />
   <input
-    type="text"
+    type="password"
     class="form__password"
     placeholder="password"
     [(ngModel)]="userData.psw"
   />
-  <p *ngIf="loginError">Usuario o contraseña inválidos</p>
+  <p class="form__error-message" *ngIf="loginError">
+    Usuario o contraseña inválidos
+  </p>
   <button class="form__button-login" type="submit" (click)="handleClick()">
     Login
   </button>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { iUserState } from 'src/app/core/models/user-model';
 import { ApiUsersService } from 'src/app/core/services/api-users-service';
+import { LocalStorageService } from 'src/app/core/services/local-storage-service';
 import { loadUser } from 'src/app/store/actions/user-actions';
 
 @Component({
@@ -16,32 +17,24 @@ export class LoginDataFormComponent implements OnInit {
   constructor(
     public store: Store<{ user: iUserState }>,
     public userApi: ApiUsersService,
-    private router: Router
+    private router: Router,
+    private localStorage: LocalStorageService
   ) {}
 
   ngOnInit(): void {
     this.userData = { email: '', psw: '' };
     this.loginError = false;
-    //esto a la page:
-    // this.store
-    //   .select((state) => state.user)
-    //   .subscribe({
-    //     next: (data) => {
-    //       if (data.token) {
-    //         this.router.navigate(['home']);
-    //       }
-    //     },
-    //   });
   }
 
   handleClick() {
     if (this.userData.email && this.userData.psw) {
-      this.userApi.loginUser(this.userData.email, this.userData.psw).subscribe({
+      this.userApi.loginUser(this.userData).subscribe({
         next: (data) => {
           if (data.token) {
             this.store.dispatch(
               loadUser({ user: data.user, token: data.token })
             );
+            this.localStorage.saveToken(data.token);
             this.router.navigate(['home']);
           }
         },
