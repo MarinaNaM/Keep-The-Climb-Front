@@ -9,6 +9,7 @@ import * as schoolsActions from '../app/store/actions/school-actions';
 import * as sectorsActions from '../app/store/actions/sector-actions';
 import * as routesActions from '../app/store/actions/route-actions';
 import * as userActions from '../app/store/actions/user-actions';
+import { LocalStorageService } from './core/services/local-storage-service';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ export class AppComponent implements OnInit {
     public schools: ApiSchoolsService,
     public routes: ApiRoutesService,
     public sectors: ApiSectorsService,
-    public user: ApiUsersService
+    public user: ApiUsersService,
+    public localStorage: LocalStorageService
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +41,20 @@ export class AppComponent implements OnInit {
       next: (data) =>
         this.store.dispatch(routesActions.loadRoutesList({ routes: data })),
     });
-    //te falta el del user, pero hay que hacerlo desde el local storage
+
+    const token = this.localStorage.getToken();
+    if (token) {
+      this.user.loginUser(undefined, token).subscribe({
+        next: (data) => {
+          if (data.token) {
+            this.store.dispatch(
+              userActions.loadUser({ user: data.user, token: data.token })
+            );
+            this.localStorage.saveToken(data.token);
+          }
+        },
+        error: (err) => {},
+      });
+    }
   }
 }

@@ -13,10 +13,10 @@ import { AppState } from 'src/app/store/app.state';
 })
 export class LandingPageComponent implements OnInit {
   constructor(
-    private userApi: ApiUsersService,
-    private store: Store<AppState>,
-    private router: Router,
-    private localStorage: LocalStorageService
+    public userApi: ApiUsersService,
+    public store: Store<AppState>,
+    public router: Router,
+    public localStorage: LocalStorageService
   ) {}
 
   ngOnInit(): void {
