@@ -6,7 +6,7 @@ export const initialState: iSectorState = {
   sectors: [],
 };
 
-export const sectorReducer = createReducer(
+export const sectorsReducer = createReducer(
   initialState,
   on(loadSectorList, (state, { sectors }) => {
     return { sectors: [...sectors] };

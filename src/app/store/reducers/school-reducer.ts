@@ -8,7 +8,7 @@ export const initialState: iSchoolState = {
   schools: [],
 };
 
-export const schoolReducer = createReducer(
+export const schoolsReducer = createReducer(
   initialState,
   on(loadSchoolsList, (state, { schools }) => {
     return { schools: [...schools] };
