@@ -1,1 +1,18 @@
-<p>login-data-form works!</p>
+<div class="form">
+  <input
+    type="text"
+    class="form__email"
+    placeholder="email"
+    [(ngModel)]="userData.email"
+  />
+  <input
+    type="text"
+    class="form__password"
+    placeholder="password"
+    [(ngModel)]="userData.psw"
+  />
+  <p *ngIf="loginError">Usuario o contraseña inválidos</p>
+  <button class="form__button-login" type="submit" (click)="handleClick()">
+    Login
+  </button>
+</div>
