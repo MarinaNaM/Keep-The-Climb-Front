@@ -20,13 +20,34 @@ export class ApiUsersService {
   }
 
   loginUser(
-    email: iUser['email'],
-    psw: iUser['psw']
+    loginData?: {
+      email: iUser['email'];
+      psw: iUser['psw'];
+    },
+    token?: string
   ): Observable<{ user: iUser; token: string }> {
-    return this.http.post(this.apiUrl + 'login', {
-      email,
-      psw,
-    }) as Observable<{ user: iUser; token: string }>;
+    if (loginData) {
+      return this.http.post(this.apiUrl + 'login', loginData) as Observable<{
+        user: iUser;
+        token: string;
+      }>;
+    } else if (token) {
+      return this.http.post(
+        this.apiUrl + 'login',
+        {},
+        {
+          headers: { Authorization: 'Bearer ' + token },
+        }
+      ) as Observable<{
+        user: iUser;
+        token: string;
+      }>;
+    } else {
+      return {} as Observable<{
+        user: iUser;
+        token: string;
+      }>;
+    }
   }
 
   getUser(id: iUser['_id']): Observable<iUser> {
