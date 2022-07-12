@@ -1,16 +1,14 @@
 import { createAction, props } from '@ngrx/store';
-import { iUser } from '../../core/models/user-model';
+import { iUser, iUserState } from '../../core/models/user-model';
 
 export const loadUser = createAction(
   '[User] Load User',
-  props<{ user: iUser }>()
+  props<{ user: iUser; token: string }>()
 );
 
 export const updateUser = createAction(
   '[User] Update User',
-  props<{ id: string; data: Partial<iUser> }>()
+  props<{ data: Partial<iUserState> }>()
 );
 
-export const deleteUser = createAction('[User] Delete User Profile');
-
-export const logout = createAction('[User] Logout');
+export const logoutUser = createAction('[User] Logout');
