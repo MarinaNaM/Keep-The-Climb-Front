@@ -3,6 +3,7 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { Observable } from 'rxjs';
 import { iUser } from '../models/user-model';
 import { ApiUsersService } from './api-users-service';
 
@@ -55,9 +56,28 @@ describe('UsersService', () => {
       req.flush(mockUser);
     });
   });
-  describe('When calling service.loginUser', () => {
+  describe('When calling service.loginUser with email and password', () => {
     it('Should call httpClient', () => {
-      service.loginUser(mockUser.email, mockUser.psw).subscribe((res) => {
+      service
+        .loginUser({ email: mockUser.email, psw: mockUser.psw })
+        .subscribe((res) => {
+          expect(res).not.toBeNull();
+          expect(JSON.stringify(res)).toBe(JSON.stringify(mockUser));
+        });
+
+      const req2 = httpTestingController.expectOne({
+        url: 'http://localhost:3453/user/login',
+        method: 'POST',
+      });
+
+      expect(req2.request.url).toBe('http://localhost:3453/user/login');
+
+      req2.flush(mockUser);
+    });
+  });
+  describe('When calling service.loginUser with token', () => {
+    it('Should call httpClient', () => {
+      service.loginUser(undefined, 'token').subscribe((res) => {
         expect(res).not.toBeNull();
         expect(JSON.stringify(res)).toBe(JSON.stringify(mockUser));
       });
@@ -70,6 +90,17 @@ describe('UsersService', () => {
       expect(req2.request.url).toBe('http://localhost:3453/user/login');
 
       req2.flush(mockUser);
+    });
+  });
+  describe('When calling service.loginUser without arguments', () => {
+    it('Should return an empty object', () => {
+      const result = service.loginUser();
+      expect(result).toEqual(
+        {} as Observable<{
+          user: iUser;
+          token: string;
+        }>
+      );
     });
   });
   describe('When calling service.getUser', () => {
