@@ -8,7 +8,7 @@ export interface iUser {
     community?: string;
     province?: string;
   };
-  role: 'admin' | 'user';
+  role?: 'admin' | 'user';
   routes: Array<{ route: string; isProject: boolean; isEnchain: boolean }>;
 }
 
