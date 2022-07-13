@@ -13,7 +13,9 @@ export class LocalStorageService {
   }
 
   saveToken(data: string) {
-    return localStorage.setItem('user-token', JSON.stringify(data));
+    if (!localStorage.getItem('user-token')) {
+      return localStorage.setItem('user-token', JSON.stringify(data));
+    } else return this.getToken();
   }
 
   clearToken() {
