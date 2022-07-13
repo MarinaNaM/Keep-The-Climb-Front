@@ -17,8 +17,6 @@ import { LocalStorageService } from './core/services/local-storage-service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'Marina_Navarrete_Front-Final-Project-202205-MAD';
-
   constructor(
     public store: Store<AppState>,
     public schools: ApiSchoolsService,
@@ -53,7 +51,9 @@ export class AppComponent implements OnInit {
             this.localStorage.saveToken(data.token);
           }
         },
-        error: (err) => {},
+        error: (err) => {
+          this.store.dispatch(userActions.logoutUser());
+        },
       });
     }
   }
