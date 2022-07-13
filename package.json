@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "nyc --reporter=html jasmine",
     "prepare": "husky install"
   },
   "private": true,
@@ -22,6 +22,7 @@
     "@ngrx/store": "^14.0.1",
     "@ngrx/store-devtools": "^14.0.1",
     "husky": "^8.0.1",
+    "nyc": "^15.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
