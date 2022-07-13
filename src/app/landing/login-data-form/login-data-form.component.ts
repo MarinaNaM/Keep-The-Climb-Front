@@ -17,8 +17,8 @@ export class LoginDataFormComponent implements OnInit {
   constructor(
     public store: Store<{ user: iUserState }>,
     public userApi: ApiUsersService,
-    private router: Router,
-    private localStorage: LocalStorageService
+    public router: Router,
+    public localStorage: LocalStorageService
   ) {}
 
   ngOnInit(): void {
