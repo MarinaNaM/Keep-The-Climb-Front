@@ -12,6 +12,6 @@ export class SignInButtonComponent implements OnInit {
   ngOnInit(): void {}
 
   goSignIn() {
-    this.router.navigate(['SignIn']);
+    this.router.navigate(['signIn']);
   }
 }
