@@ -1,1 +1,29 @@
-
+<input
+  type="text"
+  name="name"
+  placeholder="Nombre"
+  [(ngModel)]="registerData.name"
+/>
+<input
+  type="text"
+  name="email"
+  placeholder="Email"
+  [(ngModel)]="registerData.email"
+/>
+<input
+  type="password"
+  name="password"
+  minlength="8"
+  placeholder="Contraseña"
+  [(ngModel)]="registerData.psw"
+/>
+<input
+  type="password"
+  name="passwordRepeat"
+  minlength="8"
+  placeholder="Repetir contraseña"
+  [(ngModel)]="registerData.rPsw"
+/>
+<p *ngIf="passwordError">Las contraseñas no coinciden</p>
+<p *ngIf="emailError">El email no es válido o está en uso</p>
+<button (click)="handleSubmit()" type="submit">Registrarse</button>

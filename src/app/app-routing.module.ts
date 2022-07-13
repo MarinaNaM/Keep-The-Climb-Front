@@ -8,7 +8,7 @@ const routes: Routes = [
       import('../app/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'landing',
+    path: 'login',
     loadChildren: () =>
       import('../app/landing/landing.module').then((m) => m.LandingModule),
   },
