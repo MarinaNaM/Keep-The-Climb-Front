@@ -13,6 +13,7 @@
 <input
   type="password"
   name="password"
+  required
   minlength="8"
   placeholder="Contraseña"
   [(ngModel)]="registerData.psw"
@@ -20,10 +21,14 @@
 <input
   type="password"
   name="passwordRepeat"
+  required
   minlength="8"
   placeholder="Repetir contraseña"
   [(ngModel)]="registerData.rPsw"
 />
+<p *ngIf="passwordLengthError">
+  La contraseña debe tener un mínimo de 8 dígitos entre números y letras
+</p>
 <p *ngIf="passwordError">Las contraseñas no coinciden</p>
 <p *ngIf="emailError">El email no es válido o está en uso</p>
 <button (click)="handleSubmit()" type="submit">Registrarse</button>

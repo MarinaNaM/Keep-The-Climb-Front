@@ -19,6 +19,7 @@ export class SignInFormComponent implements OnInit {
     psw: string;
     rPsw: string;
   };
+  passwordLengthError!: boolean;
   passwordError!: boolean;
   emailError!: boolean;
   constructor(
@@ -35,6 +36,7 @@ export class SignInFormComponent implements OnInit {
       psw: '',
       rPsw: '',
     };
+    this.passwordLengthError = false;
     this.passwordError = false;
     this.emailError = false;
   }
@@ -47,34 +49,38 @@ export class SignInFormComponent implements OnInit {
       this.registerData.rPsw
     ) {
       if (this.registerData.psw === this.registerData.rPsw) {
-        this.passwordError = false;
-        const newUser: iUser = {
-          name: '',
-          psw: '',
-          img: '',
-          email: '',
-          address: {
-            community: '',
-            province: '',
-          },
+        if (this.registerData.psw.length >= 8) {
+          this.passwordError = false;
+          const newUser: iUser = {
+            name: this.registerData.name,
+            psw: this.registerData.psw,
+            img: '',
+            email: this.registerData.email,
+            address: {
+              community: '',
+              province: '',
+            },
 
-          routes: [{ route: '', isProject: false, isEnchain: false }],
-        };
-        this.userApi.addUser(newUser).subscribe({
-          next: (data) => {
-            if (data.token) {
-              this.store.dispatch(
-                loadUser({ user: data.user, token: data.token })
-              );
-              this.localStorage.saveToken(data.token);
-              this.router.navigate(['home']);
-            }
-          },
-          error: (err) => {
-            this.emailError = true;
-            this.registerData.email = '';
-          },
-        });
+            routes: [],
+          };
+          this.userApi.addUser(newUser).subscribe({
+            next: (data) => {
+              if (data.token) {
+                this.store.dispatch(
+                  loadUser({ user: data.user, token: data.token })
+                );
+                this.localStorage.saveToken(data.token);
+                this.router.navigate(['home']);
+              }
+            },
+            error: (err) => {
+              this.emailError = true;
+              this.registerData.email = '';
+            },
+          });
+        } else {
+          this.passwordLengthError = true;
+        }
       } else {
         this.passwordError = true;
       }
