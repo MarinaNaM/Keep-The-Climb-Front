@@ -104,4 +104,38 @@ describe('AppComponent', () => {
       expect(component.store.dispatch).toHaveBeenCalled();
     });
   });
+
+  describe('When loading the app', () => {
+    it('should fetch the schools data from the api', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const component = fixture.componentInstance;
+      spyOn(component.schools, 'getSchools').and.returnValue(of([]));
+      spyOn(component.store, 'dispatch');
+      fixture.detectChanges();
+
+      expect(component.store.dispatch).toHaveBeenCalled();
+    });
+  });
+  describe('When loading the app', () => {
+    it('should fetch the sectors data from the api', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const component = fixture.componentInstance;
+      spyOn(component.sectors, 'getSectors').and.returnValue(of([]));
+      spyOn(component.store, 'dispatch');
+      fixture.detectChanges();
+
+      expect(component.store.dispatch).toHaveBeenCalled();
+    });
+  });
+  describe('When loading the app', () => {
+    it('should fetch the routes data from the api', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const component = fixture.componentInstance;
+      spyOn(component.routes, 'getRoutes').and.returnValue(of([]));
+      spyOn(component.store, 'dispatch');
+      fixture.detectChanges();
+
+      expect(component.store.dispatch).toHaveBeenCalled();
+    });
+  });
 });
