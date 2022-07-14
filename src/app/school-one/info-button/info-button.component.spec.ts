@@ -69,13 +69,4 @@ describe('InfoButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  describe('When the component is loaded', () => {
-    it('should be find the id', () => {
-      component.idSchool = '1243';
-
-      fixture.detectChanges();
-      expect(component.school?._id).toBeUndefined();
-    });
-  });
 });
