@@ -2,17 +2,6 @@
   <app-navbar></app-navbar>
 </header>
 
-<ul>
-  <li *ngFor="let school of schools">
-    <p>{{ school.name }}</p>
-    <a routerLink="/school/{{ school._id }}">
-      <img
-        class="img-schools"
-        src="{{ school.img }}"
-        alt="imagen de escuela de escalada"
-      />
-    </a>
-  </li>
-</ul>
+<app-schools-list></app-schools-list>
 
 <app-map></app-map>
