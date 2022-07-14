@@ -24,6 +24,13 @@ const routes: Routes = [
         (m) => m.SchoolOneModule
       ),
   },
+  {
+    path: 'school/details/:id',
+    loadChildren: () =>
+      import('../app/school-details/school-details.module').then(
+        (m) => m.SchoolDetailsModule
+      ),
+  },
 ];
 
 @NgModule({

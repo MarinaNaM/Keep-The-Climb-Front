@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { iSchool, iSchoolState } from 'src/app/core/models/school-model';
+import { iSchool } from 'src/app/core/models/school-model';
 import { AppState } from 'src/app/store/app.state';
 
 @Component({
