@@ -1,3 +1,5 @@
+import { iRoute } from './route-model';
+
 export interface iSector {
   _id?: string;
   name: string;
@@ -7,7 +9,7 @@ export interface iSector {
     lat: number;
     lng: number;
   };
-  routes: Array<{}>;
+  routes: Array<iRoute>;
 }
 
 export class SectorModel implements iSector {
@@ -16,7 +18,7 @@ export class SectorModel implements iSector {
     public img: string,
     public hoursSun: 'mañana' | 'tarde' | 'todo' | 'sombra',
     public localization: { lat: number; lng: number },
-    public routes: Array<{}>
+    public routes: Array<iRoute>
   ) {}
 }
 

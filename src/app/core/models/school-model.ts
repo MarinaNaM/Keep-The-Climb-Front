@@ -1,3 +1,5 @@
+import { iSector } from './sector-model';
+
 export interface iSchool {
   _id?: string;
   name: string;
@@ -7,7 +9,7 @@ export interface iSchool {
     lat: number;
     lng: number;
   };
-  sectors: Array<{}>;
+  sectors: Array<iSector>;
 }
 
 export class SchoolModel implements iSchool {
@@ -16,7 +18,7 @@ export class SchoolModel implements iSchool {
     public img: string,
     public period: string,
     public localization: { lat: number; lng: number },
-    public sectors: Array<{}>
+    public sectors: Array<iSector>
   ) {}
 }
 
