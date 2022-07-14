@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { iSector, iSectorState } from 'src/app/core/models/sector-model';
+import { iSector } from 'src/app/core/models/sector-model';
 
 @Component({
   selector: 'app-sector-card',

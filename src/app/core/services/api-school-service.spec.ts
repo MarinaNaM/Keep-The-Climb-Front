@@ -4,6 +4,7 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { iSchool } from '../models/school-model';
+import { iSector } from '../models/sector-model';
 import { ApiSchoolsService } from './api-schools-service';
 
 describe('UsersService', () => {
@@ -16,7 +17,7 @@ describe('UsersService', () => {
       lat: 123,
       lng: 456,
     },
-    sectors: [{}],
+    sectors: [] as Array<iSector>,
   };
 
   let service: ApiSchoolsService;
