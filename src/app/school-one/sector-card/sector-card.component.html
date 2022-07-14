@@ -1,4 +1,4 @@
-<div class="sector__card">
+<div *ngIf="sector" class="sector__card">
   <p class="sector__card-name">{{ sector.name }}</p>
   <p class="sector__card-routes">{{ sector.routes.length }}</p>
   <p class="sector__card-hoursSun">{{ sector.hoursSun }}</p>
