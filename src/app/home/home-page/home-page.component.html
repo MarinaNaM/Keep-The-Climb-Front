@@ -1,9 +1,18 @@
 <header>
   <app-navbar></app-navbar>
 </header>
-<h1>HOLA HOME</h1>
+
 <ul>
   <li *ngFor="let school of schools">
     <p>{{ school.name }}</p>
+    <a routerLink="/school/{{ school._id }}">
+      <img
+        class="img-schools"
+        src="{{ school.img }}"
+        alt="imagen de escuela de escalada"
+      />
+    </a>
   </li>
 </ul>
+
+<app-map></app-map>
