@@ -19,7 +19,6 @@ export class SectorsComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.school = data.schools.find((item) => item._id === this.idSchool);
-          console.log(this.school);
         },
       });
   }
