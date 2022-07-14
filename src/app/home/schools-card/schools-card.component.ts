@@ -16,7 +16,6 @@ export class SchoolsCardComponent implements OnInit {
       .select((state) => state.schools)
       .subscribe({
         next: (data) => {
-          console.log(data);
           this.schools = data.schools;
         },
       });
