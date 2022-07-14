@@ -1,1 +1,5 @@
-<p>sectors works!</p>
+<ul class="sectors" *ngIf="school">
+  <li class="sectors__list" *ngFor="let sector of school.sectors">
+    <app-sector-card [sector]="sector"></app-sector-card>
+  </li>
+</ul>
