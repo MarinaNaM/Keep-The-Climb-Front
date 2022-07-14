@@ -7,7 +7,7 @@ import { RoutesGradeComponent } from './routes-grade/routes-grade.component';
 import { PeriodComponent } from './period/period.component';
 import { MapComponent } from './map/map.component';
 import { BackButtonComponent } from './back-button/back-button.component';
-
+import { NavbarModule } from '../navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -15,11 +15,8 @@ import { BackButtonComponent } from './back-button/back-button.component';
     RoutesGradeComponent,
     PeriodComponent,
     MapComponent,
-    BackButtonComponent
+    BackButtonComponent,
   ],
-  imports: [
-    CommonModule,
-    SchoolDetailsRoutingModule
-  ]
+  imports: [CommonModule, SchoolDetailsRoutingModule, NavbarModule],
 })
-export class SchoolDetailsModule { }
+export class SchoolDetailsModule {}
