@@ -1,6 +1,8 @@
-<i routerLink="/school/details">
-  <img
-    src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2Finfo-icon.svg?alt=media&token=2f39bc70-cbdd-4d7f-9747-68b531199e40"
-    alt="información"
-  />
-</i>
+<div *ngIf="school">
+  <i routerLink="/school/details/{{ school._id }}">
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2Finfo-icon.svg?alt=media&token=2f39bc70-cbdd-4d7f-9747-68b531199e40"
+      alt="información"
+    />
+  </i>
+</div>
