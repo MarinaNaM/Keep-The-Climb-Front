@@ -3,6 +3,7 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { iRoute } from '../models/route-model';
 import { iSector } from '../models/sector-model';
 import { ApiSectorsService } from './api-sectors-service';
 
@@ -16,7 +17,7 @@ describe('UsersService', () => {
       lat: 1234,
       lng: 5678,
     },
-    routes: [{}],
+    routes: [] as Array<iRoute>,
   };
 
   let service: ApiSectorsService;
