@@ -10,11 +10,12 @@ import { AppState } from 'src/app/store/app.state';
   styleUrls: ['./details-page.component.scss'],
 })
 export class DetailsPageComponent implements OnInit {
-  idSchool = this.route.snapshot.paramMap.get('id') as string;
+  idSchool!: string;
   school!: iSchool | undefined;
   constructor(public route: ActivatedRoute, public store: Store<AppState>) {}
 
   ngOnInit(): void {
+    this.idSchool = this.route.snapshot.paramMap.get('id') as string;
     this.store
       .select((state) => state.schools)
       .subscribe({
