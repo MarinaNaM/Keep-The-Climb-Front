@@ -1,1 +1,5 @@
-<p>routes-list works!</p>
+<ol class="routes" *ngIf="sector">
+  <li class="routes__list" *ngFor="let route of sector.routes">
+    <app-routes-card [route]="route"></app-routes-card>
+  </li>
+</ol>
