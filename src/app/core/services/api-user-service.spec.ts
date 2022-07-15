@@ -122,7 +122,8 @@ describe('UsersService', () => {
   });
   describe('When calling service.updateUser', () => {
     it('should call httpClient', () => {
-      service.updateUser('id', mockUser).subscribe((res) => {
+      const mockToken = 'token';
+      service.updateUser('id', mockUser, mockToken).subscribe((res) => {
         expect(res).not.toBeNull();
         expect(JSON.stringify(res)).toBe(JSON.stringify(mockUser));
       });
