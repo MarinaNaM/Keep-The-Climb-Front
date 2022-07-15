@@ -6,7 +6,6 @@ import { ApiUsersService } from 'src/app/core/services/api-users-service';
 import * as userActions from '../../store/actions/user-actions';
 import { AppState } from 'src/app/store/app.state';
 import { Router } from '@angular/router';
-import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: 'app-project-button',
@@ -35,13 +34,15 @@ export class ProjectButtonComponent implements OnInit {
   handleProject() {
     if (this.user.token) {
       let newUserRoutes: {
-        route: string;
+        route: iRoute;
         isProject: boolean;
         isEnchain: boolean;
       }[];
-      if (this.user.user.routes.find((item) => item.route === this.route._id)) {
+      if (
+        this.user.user.routes.find((item) => item.route._id === this.route._id)
+      ) {
         newUserRoutes = this.user.user.routes.map((item) =>
-          item.route === this.route._id
+          item.route._id === this.route._id
             ? {
                 route: item.route,
                 isProject: !item.isProject,
@@ -52,7 +53,7 @@ export class ProjectButtonComponent implements OnInit {
       } else {
         newUserRoutes = this.user.user.routes.map((item) => item);
         newUserRoutes.push({
-          route: this.route._id as string,
+          route: this.route,
           isEnchain: false,
           isProject: true,
         });
