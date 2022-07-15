@@ -1,3 +1,5 @@
+import { iRoute } from './route-model';
+
 export interface iUser {
   _id?: string;
   name: string;
@@ -9,7 +11,7 @@ export interface iUser {
     province?: string;
   };
   role?: 'admin' | 'user';
-  routes: Array<{ route: string; isProject: boolean; isEnchain: boolean }>;
+  routes: Array<{ route: iRoute; isProject: boolean; isEnchain: boolean }>;
 }
 
 export class UserModel implements iUser {
@@ -21,7 +23,7 @@ export class UserModel implements iUser {
     public address: { community: string; province: string },
     public role: 'admin' | 'user',
     public routes: Array<{
-      route: string;
+      route: iRoute;
       isProject: boolean;
       isEnchain: boolean;
     }>
