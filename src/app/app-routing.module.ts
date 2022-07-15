@@ -36,6 +36,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('../app/sector/sector.module').then((m) => m.SectorModule),
   },
+  {
+    path: 'enchain',
+    loadChildren: () =>
+      import('../app/enchains/enchains.module').then((m) => m.EnchainsModule),
+  },
 ];
 
 @NgModule({
