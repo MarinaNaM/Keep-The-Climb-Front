@@ -34,14 +34,16 @@ export class EnchainButtonComponent implements OnInit {
   handleEnchain() {
     if (this.user.token) {
       let newUserRoutes: {
-        route: string;
+        route: iRoute;
         isProject: boolean;
         isEnchain: boolean;
       }[];
 
-      if (this.user.user.routes.find((item) => item.route === this.route._id)) {
+      if (
+        this.user.user.routes.find((item) => item.route._id === this.route._id)
+      ) {
         newUserRoutes = this.user.user.routes.map((item) =>
-          item.route === this.route._id
+          item.route._id === this.route._id
             ? {
                 route: item.route,
                 isProject: item.isProject,
@@ -52,7 +54,7 @@ export class EnchainButtonComponent implements OnInit {
       } else {
         newUserRoutes = this.user.user.routes.map((item) => item);
         newUserRoutes.push({
-          route: this.route._id as string,
+          route: this.route,
           isEnchain: true,
           isProject: false,
         });
