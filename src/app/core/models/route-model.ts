@@ -22,5 +22,5 @@ export class RouteModel implements iRoute {
 }
 
 export interface iRoutesState {
-  routes: ReadonlyArray<iRoute>;
+  routes: Array<iRoute>;
 }

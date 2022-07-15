@@ -1,5 +1,11 @@
 <div *ngIf="sector" class="sector__card">
-  <p class="sector__card-name">{{ sector.name }}</p>
-  <p class="sector__card-routes">{{ sector.routes.length }}</p>
-  <p class="sector__card-hoursSun">{{ sector.hoursSun }}</p>
+  <p class="sector__card-name" routerLink="../../sector/{{ sector._id }}">
+    {{ sector.name }}
+  </p>
+  <p class="sector__card-routes" routerLink="../../sector/{{ sector._id }}">
+    {{ sector.routes.length }}
+  </p>
+  <p class="sector__card-hoursSun" routerLink="../../sector/{{ sector._id }}">
+    {{ sector.hoursSun }}
+  </p>
 </div>

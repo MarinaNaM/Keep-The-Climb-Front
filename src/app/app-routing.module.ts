@@ -31,6 +31,11 @@ const routes: Routes = [
         (m) => m.SchoolDetailsModule
       ),
   },
+  {
+    path: 'sector/:id',
+    loadChildren: () =>
+      import('../app/sector/sector.module').then((m) => m.SectorModule),
+  },
 ];
 
 @NgModule({

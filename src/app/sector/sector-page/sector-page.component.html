@@ -1,1 +1,7 @@
-<p>sector-page works!</p>
+<app-navbar></app-navbar>
+<div *ngIf="sector">
+  <p>{{ sector.name }}</p>
+  <img src="{{ sector.img }}" alt="imagen del sector" />
+</div>
+<app-approach-button></app-approach-button>
+<app-routes-list></app-routes-list>

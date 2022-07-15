@@ -54,8 +54,14 @@ export class ApiUsersService {
     return this.http.get(this.apiUrl + id) as Observable<iUser>;
   }
 
-  updateUser(id: iUser['_id'], user: iUser): Observable<iUser> {
-    return this.http.patch(this.apiUrl + id, user) as Observable<iUser>;
+  updateUser(
+    id: iUser['_id'],
+    user: Partial<iUser>,
+    token: string
+  ): Observable<iUser> {
+    return this.http.patch(this.apiUrl + id, user, {
+      headers: { Authorization: 'bearer ' + token },
+    }) as Observable<iUser>;
   }
 
   deleteUser(): Observable<iUser> {
