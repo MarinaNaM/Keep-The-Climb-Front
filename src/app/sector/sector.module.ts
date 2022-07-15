@@ -9,7 +9,7 @@ import { EnchainButtonComponent } from './enchain-button/enchain-button.componen
 import { ProjectButtonComponent } from './project-button/project-button.component';
 import { VoteButtonComponent } from './vote-button/vote-button.component';
 import { ApproachButtonComponent } from './approach-button/approach-button.component';
-
+import { NavbarModule } from '../navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -19,11 +19,8 @@ import { ApproachButtonComponent } from './approach-button/approach-button.compo
     EnchainButtonComponent,
     ProjectButtonComponent,
     VoteButtonComponent,
-    ApproachButtonComponent
+    ApproachButtonComponent,
   ],
-  imports: [
-    CommonModule,
-    SectorRoutingModule
-  ]
+  imports: [CommonModule, SectorRoutingModule, NavbarModule],
 })
-export class SectorModule { }
+export class SectorModule {}
