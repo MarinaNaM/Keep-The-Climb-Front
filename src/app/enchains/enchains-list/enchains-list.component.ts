@@ -24,7 +24,6 @@ export class EnchainsListComponent implements OnInit {
           this.enchainedRoutes = data.user.routes.filter(
             (item) => item.isEnchain === true
           );
-          console.log(data);
         },
       });
   }
