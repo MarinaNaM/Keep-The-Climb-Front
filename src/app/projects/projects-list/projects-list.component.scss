@@ -1,0 +1,25 @@
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.routes {
+  display: flex;
+
+  justify-content: space-between;
+  background-color: #b4c7dc79;
+  border: 0.5px solid #b4c7dc;
+  flex-wrap: wrap;
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
