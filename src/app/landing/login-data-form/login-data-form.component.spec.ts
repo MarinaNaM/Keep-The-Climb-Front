@@ -25,7 +25,12 @@ const mockInitialState: AppState = {
       role: 'user',
       routes: [
         {
-          route: '123456789012345678901234',
+          route: {
+            name: '',
+            length: 1,
+            grade: '',
+            voteGrade: [{ user: '', vote: 1 }],
+          },
           isProject: false,
           isEnchain: false,
         },
