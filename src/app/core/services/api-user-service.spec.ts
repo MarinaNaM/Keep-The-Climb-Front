@@ -20,7 +20,16 @@ describe('UsersService', () => {
     },
     role: 'user',
     routes: [
-      { route: '123456789012345678901234', isProject: false, isEnchain: false },
+      {
+        route: {
+          name: '',
+          length: 1,
+          grade: '',
+          voteGrade: [{ user: '', vote: 1 }],
+        },
+        isProject: false,
+        isEnchain: false,
+      },
     ],
   };
 

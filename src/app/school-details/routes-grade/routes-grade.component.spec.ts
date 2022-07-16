@@ -3,10 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockStore } from '@ngrx/store/testing';
-import { iRoute } from 'src/app/core/models/route-model';
 import { iSchool } from 'src/app/core/models/school-model';
 import { iSector } from 'src/app/core/models/sector-model';
-import { RoutesCardComponent } from 'src/app/sector/routes-card/routes-card.component';
 import { AppState } from 'src/app/store/app.state';
 
 import { RoutesGradeComponent } from './routes-grade.component';
@@ -41,7 +39,12 @@ const mockInitialState: AppState = {
       role: 'user',
       routes: [
         {
-          route: '123456789012345678901234',
+          route: {
+            name: '',
+            length: 1,
+            grade: '',
+            voteGrade: [{ user: '', vote: 1 }],
+          },
           isProject: false,
           isEnchain: false,
         },

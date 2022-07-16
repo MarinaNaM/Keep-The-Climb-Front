@@ -38,7 +38,12 @@ const mockInitialState: AppState = {
       role: 'user',
       routes: [
         {
-          route: '123456789012345678901234',
+          route: {
+            name: '',
+            length: 1,
+            grade: '',
+            voteGrade: [{ user: '', vote: 1 }],
+          },
           isProject: false,
           isEnchain: false,
         },
@@ -68,6 +73,7 @@ describe('ProjectButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   describe('When handleProject is calling with token', () => {
     it('should update routes object property', () => {
       component.user.token = 'token';
@@ -79,8 +85,27 @@ describe('ProjectButtonComponent', () => {
         voteGrade: [{ user: '123456', vote: 3 }],
       };
       component.user.user.routes = [
-        { route: '1234', isProject: false, isEnchain: false },
-        { route: '1235', isProject: false, isEnchain: false },
+        {
+          route: {
+            name: '',
+            length: 1,
+            grade: '',
+            voteGrade: [{ user: '', vote: 1 }],
+          },
+          isProject: false,
+          isEnchain: false,
+        },
+        {
+          route: {
+            _id: '1234',
+            name: '',
+            length: 1,
+            grade: '',
+            voteGrade: [{ user: '', vote: 1 }],
+          },
+          isProject: false,
+          isEnchain: false,
+        },
       ];
       spyOn(component.apiUser, 'updateUser').and.returnValue(
         of({ name: 'pepito', psw: '', email: '', address: {}, routes: [] })
@@ -105,7 +130,16 @@ describe('ProjectButtonComponent', () => {
         voteGrade: [{ user: '123456', vote: 3 }],
       };
       component.user.user.routes = [
-        { route: '1235', isProject: false, isEnchain: false },
+        {
+          route: {
+            name: '',
+            length: 1,
+            grade: '',
+            voteGrade: [{ user: '', vote: 1 }],
+          },
+          isProject: false,
+          isEnchain: false,
+        },
       ];
       spyOn(component.apiUser, 'updateUser').and.returnValue(
         of({ name: 'pepito', psw: '', email: '', address: {}, routes: [] })

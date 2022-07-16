@@ -2,7 +2,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockStore } from '@ngrx/store/testing';
-import { of } from 'rxjs';
 import { iSchool } from 'src/app/core/models/school-model';
 import { iSector } from 'src/app/core/models/sector-model';
 import { AppState } from 'src/app/store/app.state';
@@ -39,7 +38,12 @@ const mockInitialState: AppState = {
       role: 'user',
       routes: [
         {
-          route: '123456789012345678901234',
+          route: {
+            name: '',
+            length: 1,
+            grade: '',
+            voteGrade: [{ user: '', vote: 1 }],
+          },
           isProject: false,
           isEnchain: false,
         },
