@@ -11,7 +11,7 @@
       <p class="list__route-name">{{ enchain.route.name }}</p>
       <p class="list__route-length">{{ enchain.route.length }}</p>
       <p class="list__route-grade">{{ enchain.route.grade }}</p>
-      <app-edit-button></app-edit-button>
+      <app-edit-button [route]="enchain.route"></app-edit-button>
     </li>
   </ul>
 </div>
