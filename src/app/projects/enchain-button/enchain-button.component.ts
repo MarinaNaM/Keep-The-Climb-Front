@@ -15,7 +15,6 @@ import * as userActions from '../../store/actions/user-actions';
 export class EnchainButtonComponent implements OnInit {
   @Input() route!: iRoute;
   user!: iUserState;
-  // route!: iRoute;
 
   constructor(
     public store: Store<AppState>,
@@ -78,5 +77,3 @@ export class EnchainButtonComponent implements OnInit {
     }
   }
 }
-
-//añadir que si está encadenada se borre de esta lista
