@@ -5,30 +5,6 @@ import { AppState } from 'src/app/store/app.state';
 
 import { EnchainsListComponent } from './enchains-list.component';
 
-const mockUser: iUserState = {
-  user: {
-    _id: '123456789012345678901234',
-    name: '',
-    psw: '',
-    email: '',
-    address: {},
-    routes: [
-      {
-        route: {
-          _id: '123456789012345678901234',
-          name: '',
-          length: 1,
-          grade: '',
-          voteGrade: [{ user: '', vote: 1 }],
-        },
-        isProject: false,
-        isEnchain: false,
-      },
-    ],
-  },
-  token: '',
-};
-
 const mockInitialState: AppState = {
   schools: { schools: [] },
   sectors: { sectors: [] },
