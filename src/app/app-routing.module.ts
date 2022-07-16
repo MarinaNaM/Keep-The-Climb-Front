@@ -42,7 +42,7 @@ const routes: Routes = [
       import('../app/enchains/enchains.module').then((m) => m.EnchainsModule),
   },
   {
-    path: 'projects',
+    path: 'project',
     loadChildren: () =>
       import('../app/projects/projects.module').then((m) => m.ProjectsModule),
   },
