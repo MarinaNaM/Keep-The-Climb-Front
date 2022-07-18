@@ -73,10 +73,12 @@ describe('UsersService', () => {
 
   describe('When calling service.voteRoute', () => {
     it('should call httpClient', () => {
-      service.voteRoute('id', mockRoute).subscribe((res) => {
-        expect(res).not.toBeNull();
-        expect(JSON.stringify(res)).toBe(JSON.stringify(mockRoute));
-      });
+      service
+        .voteRoute('id', { user: '', vote: '' }, 'token')
+        .subscribe((res) => {
+          expect(res).not.toBeNull();
+          expect(JSON.stringify(res)).toBe(JSON.stringify(mockRoute));
+        });
 
       const req1 = httpTestingController.expectOne({
         url: 'http://localhost:3453/route/voteRoute/id',
