@@ -1,1 +1,53 @@
-<p>user-data-form works!</p>
+<div class="form">
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  <input
+    class="form__name"
+    type="text"
+    name="name"
+    placeholder="Nombre"
+    [(ngModel)]="updatedUserData.name"
+  />
+  <input
+    class="form__email"
+    type="text"
+    name="email"
+    placeholder="Email"
+    [(ngModel)]="updatedUserData.email"
+  />
+  <input
+    class="form__img"
+    type="text"
+    name="image"
+    placeholder="URL de la imagen"
+    [(ngModel)]="updatedUserData.img"
+  />
+  <input
+    class="form__community"
+    type="text"
+    name="address-community"
+    placeholder="Comunidad Autónoma"
+    [(ngModel)]="updatedUserData.address.community"
+  />
+  <input
+    class="form__province"
+    type="text"
+    name="address-province"
+    placeholder="Provincia"
+    [(ngModel)]="updatedUserData.address.province"
+  />
+  <input
+    class="form__psw"
+    type="password"
+    name="psw"
+    placeholder="Contraseña"
+    [(ngModel)]="updatedUserData.psw"
+  />
+  <input
+    class="form__rPsw"
+    type="password"
+    name="rPsw"
+    placeholder="Repetir contraseña"
+    [(ngModel)]="updatedUserData.rPsw"
+  />
+  <button (click)="handleSubmitUpdate()">Guardar</button>
+</div>
