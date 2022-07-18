@@ -1,1 +1,10 @@
-<p>route-card works!</p>
+<div class="routes-container">
+  <ul class="routes">
+    <li class="routes__list">
+      <p class="list__route-name">{{ editRoute.route.name }}</p>
+      <p class="list__route-length">{{ editRoute.route.length }}</p>
+      <p class="list__route-grade">{{ editRoute.route.grade }}</p>
+    </li>
+  </ul>
+</div>
+<app-vote-form [route]="editRoute.route"></app-vote-form>
