@@ -1,17 +1,20 @@
 <h2 class="title">Vías encadenadas</h2>
-<div class="caption">
-  <p>Nombre</p>
-  <p>Longitud</p>
-  <p>Grado</p>
-  <p>Editar grado</p>
+<div *ngIf="enchainedRoutes.length > 0; else advise">
+  <div class="caption">
+    <p>Nombre</p>
+    <p>Longitud</p>
+    <p>Grado</p>
+    <p>Editar grado</p>
+  </div>
+  <div class="routes-container">
+    <ul class="routes" *ngFor="let enchain of enchainedRoutes">
+      <li class="routes__list">
+        <p class="list__route-name">{{ enchain.route.name }}</p>
+        <p class="list__route-length">{{ enchain.route.length }}</p>
+        <p class="list__route-grade">{{ enchain.route.grade }}</p>
+        <app-edit-button [route]="enchain.route"></app-edit-button>
+      </li>
+    </ul>
+  </div>
 </div>
-<div class="routes-container">
-  <ul class="routes" *ngFor="let enchain of enchainedRoutes">
-    <li class="routes__list">
-      <p class="list__route-name">{{ enchain.route.name }}</p>
-      <p class="list__route-length">{{ enchain.route.length }}</p>
-      <p class="list__route-grade">{{ enchain.route.grade }}</p>
-      <app-edit-button [route]="enchain.route"></app-edit-button>
-    </li>
-  </ul>
-</div>
+<ng-template #advise>Aún no tienes vías encadenadas</ng-template>
