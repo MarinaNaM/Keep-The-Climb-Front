@@ -20,10 +20,13 @@ export class ApiRoutesService {
     return this.http.get(this.apiUrl + id) as Observable<iRoute>;
   }
 
-  voteRoute(id: iRoute['_id'], route: iRoute): Observable<iRoute> {
-    return this.http.patch(
-      this.apiUrl + 'voteRoute/' + id,
-      route.voteGrade
-    ) as Observable<iRoute>;
+  voteRoute(
+    id: iRoute['_id'],
+    vote: { user: string; vote: string },
+    token: string
+  ): Observable<iRoute> {
+    return this.http.patch(this.apiUrl + 'voteRoute/' + id, vote, {
+      headers: { Authorization: 'Bearer ' + token },
+    }) as Observable<iRoute>;
   }
 }
