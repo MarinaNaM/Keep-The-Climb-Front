@@ -94,6 +94,9 @@ describe('VoteFormComponent', () => {
       };
       component.user = { user: mockUser, token: 'token' };
 
+      spyOn(component.userApi, 'loginUser').and.returnValue(
+        of({ user: mockUser, token: 'token' })
+      );
       spyOn(component.routeApi, 'voteRoute').and.returnValue(of(mockRoute));
       spyOn(component.store, 'dispatch');
       fixture.detectChanges();
