@@ -8,7 +8,11 @@ import { NavbarModule } from '../navbar/navbar.module';
 import { EditButtonComponent } from './edit-button/edit-button.component';
 
 @NgModule({
-  declarations: [EnchainPageComponent, EnchainsListComponent, EditButtonComponent],
+  declarations: [
+    EnchainPageComponent,
+    EnchainsListComponent,
+    EditButtonComponent,
+  ],
   imports: [CommonModule, EnchainsRoutingModule, NavbarModule],
 })
 export class EnchainsModule {}

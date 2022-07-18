@@ -46,6 +46,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('../app/projects/projects.module').then((m) => m.ProjectsModule),
   },
+  {
+    path: 'voteRoute/:id',
+    loadChildren: () =>
+      import('../app/vote/vote.module').then((m) => m.VoteModule),
+  },
 ];
 
 @NgModule({
