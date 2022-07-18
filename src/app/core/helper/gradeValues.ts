@@ -123,7 +123,6 @@ export const valueToGrade = (value: number) => {
     value: number;
     grade: string;
   };
-  console.log(result);
   newGrade = result.grade;
 
   return newGrade;
