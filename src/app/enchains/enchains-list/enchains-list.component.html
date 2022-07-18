@@ -4,6 +4,7 @@
     <p>Nombre</p>
     <p>Longitud</p>
     <p>Grado</p>
+    <p>Media usuarios</p>
     <p>Editar grado</p>
   </div>
   <div class="routes-container">
@@ -12,6 +13,7 @@
         <p class="list__route-name">{{ enchain.route.name }}</p>
         <p class="list__route-length">{{ enchain.route.length }}</p>
         <p class="list__route-grade">{{ enchain.route.grade }}</p>
+        <p class="list__route-media">{{ mediaVotes(enchain.route) }}</p>
         <app-edit-button [route]="enchain.route"></app-edit-button>
       </li>
     </ul>
