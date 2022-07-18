@@ -1,5 +1,9 @@
 export const gradeValues = [
   {
+    value: 0,
+    grade: 'None',
+  },
+  {
     value: 1,
     grade: '4-',
   },
@@ -126,4 +130,16 @@ export const valueToGrade = (value: number) => {
   newGrade = result.grade;
 
   return newGrade;
+};
+
+export const gradeToValue = (grade: string) => {
+  let newValue: number;
+  const result = gradeValues.find(
+    (item) => String(item.grade) === String(grade)
+  ) as {
+    value: number;
+    grade: string;
+  };
+  newValue = result.value;
+  return newValue;
 };
