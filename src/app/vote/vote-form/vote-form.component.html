@@ -1,1 +1,10 @@
-<p>vote-form works!</p>
+<p>Tu voto:</p>
+<div *ngIf="!checkVote(); else vote">
+  <select name="userGrades" id="" [(ngModel)]="newVote">
+    <option *ngFor="let item of values" value="{{ item.value }}">
+      {{ item.grade }}
+    </option>
+  </select>
+  <button (click)="saveVote(newVote)">Guardar</button>
+</div>
+<ng-template #vote>{{ convertNumberToGrade(checkVote().vote) }}</ng-template>
