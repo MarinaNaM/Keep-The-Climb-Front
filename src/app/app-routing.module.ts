@@ -51,6 +51,18 @@ const routes: Routes = [
     loadChildren: () =>
       import('../app/vote/vote.module').then((m) => m.VoteModule),
   },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('../app/profile/profile.module').then((m) => m.ProfileModule),
+  },
+  {
+    path: 'editProfile',
+    loadChildren: () =>
+      import('../app/edit-profile/edit-profile.module').then(
+        (m) => m.EditProfileModule
+      ),
+  },
 ];
 
 @NgModule({

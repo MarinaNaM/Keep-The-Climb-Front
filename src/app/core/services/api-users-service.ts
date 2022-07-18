@@ -64,7 +64,9 @@ export class ApiUsersService {
     }) as Observable<iUser>;
   }
 
-  deleteUser(): Observable<iUser> {
-    return this.http.delete(this.apiUrl) as Observable<iUser>;
+  deleteUser(token: string): Observable<iUser> {
+    return this.http.delete(this.apiUrl, {
+      headers: { Authorization: 'Bearer ' + token },
+    }) as Observable<iUser>;
   }
 }

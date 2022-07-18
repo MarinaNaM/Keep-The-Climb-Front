@@ -9,7 +9,7 @@ import { MediaGradesComponent } from './media-grades/media-grades.component';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { DeleteButtonComponent } from './delete-button/delete-button.component';
 import { EditButtonComponent } from './edit-button/edit-button.component';
-
+import { NavbarModule } from '../navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -19,11 +19,8 @@ import { EditButtonComponent } from './edit-button/edit-button.component';
     MediaGradesComponent,
     LogoutButtonComponent,
     DeleteButtonComponent,
-    EditButtonComponent
+    EditButtonComponent,
   ],
-  imports: [
-    CommonModule,
-    ProfileRoutingModule
-  ]
+  imports: [CommonModule, ProfileRoutingModule, NavbarModule],
 })
-export class ProfileModule { }
+export class ProfileModule {}
