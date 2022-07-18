@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { gradeValues, valueToGrade } from 'src/app/core/helper/gradeValues';
 import { iRoute } from 'src/app/core/models/route-model';
@@ -20,7 +21,8 @@ export class VoteFormComponent implements OnInit {
 
   constructor(
     public store: Store<AppState>,
-    public routeApi: ApiRoutesService
+    public routeApi: ApiRoutesService,
+    public routeTo: Router
   ) {}
 
   ngOnInit(): void {
@@ -71,6 +73,8 @@ export class VoteFormComponent implements OnInit {
             },
           });
       }
+    } else {
+      this.routeTo.navigate(['login']);
     }
   }
 }
