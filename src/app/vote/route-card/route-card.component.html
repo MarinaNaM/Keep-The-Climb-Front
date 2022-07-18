@@ -1,9 +1,21 @@
+<div class="caption">
+  <p>Nombre</p>
+  <p>Longitud</p>
+  <p>Grado</p>
+</div>
 <div class="routes-container">
   <ul class="routes">
     <li class="routes__list">
       <p class="list__route-name">{{ editRoute.route.name }}</p>
       <p class="list__route-length">{{ editRoute.route.length }}</p>
-      <p class="list__route-grade">{{ editRoute.route.grade }}</p>
+      <p class="list__route-grade">
+        {{ editRoute.route.grade
+        }}<span
+          ><img
+            src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2Fcandado-icon.svg?alt=media&token=b1749dc9-79bb-4c07-b0d4-c10166ad4403"
+            alt="candado"
+        /></span>
+      </p>
     </li>
   </ul>
 </div>
