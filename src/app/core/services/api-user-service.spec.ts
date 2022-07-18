@@ -149,7 +149,7 @@ describe('UsersService', () => {
   });
   describe('When calling service.deleteUser', () => {
     it('should call httpClient', () => {
-      service.deleteUser().subscribe((res) => {
+      service.deleteUser('token').subscribe((res) => {
         expect(res).not.toBeNull();
         expect(JSON.stringify(res)).toBe(JSON.stringify(mockUser));
       });
