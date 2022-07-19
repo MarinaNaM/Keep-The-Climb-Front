@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideMockStore } from '@ngrx/store/testing';
-import { iUser, iUserState } from 'src/app/core/models/user-model';
-import { AppState } from 'src/app/store/app.state';
+import { iUserState } from 'src/app/core/models/user-model';
 
 import { UserDataComponent } from './user-data.component';
 
