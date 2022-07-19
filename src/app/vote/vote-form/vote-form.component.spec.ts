@@ -112,7 +112,7 @@ describe('VoteFormComponent', () => {
       fixture.detectChanges();
       component.saveVote(2);
 
-      expect(component.routeTo.navigate).toHaveBeenCalledWith(['login']);
+      expect(component.routeTo.navigate).toHaveBeenCalledWith(['']);
     });
   });
 });
