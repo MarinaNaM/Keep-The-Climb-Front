@@ -81,50 +81,9 @@ export class VoteFormComponent implements OnInit {
               );
             },
           });
-        // let updateUser = this.user.user.routes;
-        // const newRoutesUser = updateUser.map((item) =>
-        //   item.route._id === this.route._id
-        //     ? {
-        //         route: this.route,
-        //         isEnchain: item.isEnchain,
-        //         isProject: item.isProject,
-        //       }
-        //     : item
-        // );
-        // this.userApi
-        //   .updateUser(
-        //     this.user.user._id,
-        //     { routes: newRoutesUser },
-        //     this.user.token
-        //   )
-        //   .subscribe({
-        //     next: (data) => {
-        //       this.store.dispatch(
-        //         UserActions.loadUser({
-        //           user: this.user.user,
-        //           token: this.user.token,
-        //         })
-        // UserActions.updateUser({
-        //   data: {
-        //     user: { routes: newRoutesUser },
-        //   } as Partial<iUserState>,
-        // })
-        //     );
-        //   },
-        // });
       }
     } else {
       this.routeTo.navigate(['']);
     }
   }
 }
-// let updateUser = this.user.user.routes;
-// const newRoutesUser = [...updateUser, this.route];
-
-// this.store.dispatch(
-//   UserActions.updateUser({
-//     data: {
-//       user: { routes: newRoutesUser },
-//     } as Partial<iUserState>,
-//   })
-// );

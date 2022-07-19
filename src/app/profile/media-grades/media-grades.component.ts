@@ -34,7 +34,7 @@ export class MediaGradesComponent implements OnInit {
     const mediaValue = Math.round(
       this.enchainedRoutes
         .map((item) => gradeToValue(item.route.grade))
-        .reduce((a, b) => a + b) / this.enchainedRoutes.length
+        .reduce((a, b) => a + b, 0) / this.enchainedRoutes.length
     );
     const mediaGrade = valueToGrade(mediaValue);
     return mediaGrade;

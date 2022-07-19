@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockStore } from '@ngrx/store/testing';
-import { iUserState } from 'src/app/core/models/user-model';
+import { iRoute } from 'src/app/core/models/route-model';
 import { AppState } from 'src/app/store/app.state';
 
 import { EnchainsListComponent } from './enchains-list.component';
@@ -55,5 +55,44 @@ describe('EnchainsListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('When calling media votes', () => {
+    it('should does media of votes', () => {
+      const mockRoute: iRoute = {
+        name: '',
+        length: 0,
+        grade: '',
+        voteGrade: [
+          {
+            user: '',
+            vote: 1,
+          },
+          {
+            user: '',
+            vote: 3,
+          },
+        ],
+      };
+      fixture.detectChanges();
+      const result = component.mediaVotes(mockRoute);
+
+      expect(result).toBe('4');
+    });
+  });
+
+  describe('When calling media votes without votes', () => {
+    it('should return a string', () => {
+      const mockRoute: iRoute = {
+        name: '',
+        length: 0,
+        grade: '',
+        voteGrade: [],
+      };
+      fixture.detectChanges();
+      const result = component.mediaVotes(mockRoute);
+
+      expect(result).toBe('Sin votos');
+    });
   });
 });

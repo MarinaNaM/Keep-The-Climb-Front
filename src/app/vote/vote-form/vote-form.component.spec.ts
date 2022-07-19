@@ -94,6 +94,9 @@ describe('VoteFormComponent', () => {
       };
       component.user = { user: mockUser, token: 'token' };
 
+      spyOn(component.userApi, 'loginUser').and.returnValue(
+        of({ user: mockUser, token: 'token' })
+      );
       spyOn(component.routeApi, 'voteRoute').and.returnValue(of(mockRoute));
       spyOn(component.store, 'dispatch');
       fixture.detectChanges();
@@ -109,7 +112,7 @@ describe('VoteFormComponent', () => {
       fixture.detectChanges();
       component.saveVote(2);
 
-      expect(component.routeTo.navigate).toHaveBeenCalledWith(['login']);
+      expect(component.routeTo.navigate).toHaveBeenCalledWith(['']);
     });
   });
 });
