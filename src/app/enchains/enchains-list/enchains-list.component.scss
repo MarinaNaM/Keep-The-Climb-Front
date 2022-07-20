@@ -1,12 +1,18 @@
 .title {
   display: flex;
   justify-content: center;
+  padding: 1rem 0;
 }
 
 .caption {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0 5px 2px 5px;
+
+  &__name {
+    width: 40%;
+  }
 }
 
 .routes {
@@ -16,7 +22,27 @@
 
   &__list {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-between;
+
+    .list__route-name {
+      margin: 0 0 0 5px;
+      width: 38%;
+    }
+
+    .list__route-lenght {
+      max-width: 10%;
+    }
+
+    .edit {
+      display: block;
+      margin: 0 5px 0 0;
+    }
   }
+}
+
+fieldset {
+  border: solid 1px black;
+  margin: 0 5px;
+  padding: 5px;
 }

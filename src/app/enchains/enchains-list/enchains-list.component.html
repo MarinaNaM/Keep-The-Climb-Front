@@ -1,22 +1,31 @@
 <h2 class="title">Vías encadenadas</h2>
 <div *ngIf="enchainedRoutes.length > 0; else advise">
   <div class="caption">
-    <p>Nombre</p>
-    <p>Longitud</p>
-    <p>Grado</p>
-    <p>Media usuarios</p>
-    <p>Editar grado</p>
+    <p class="caption__name">Nombre</p>
+    <p class="caption__lng">Lng</p>
+    <p class="caption__grd">Grd</p>
+    <p class="caption__med">Med</p>
+    <p class="caption__edt">Edt</p>
   </div>
   <div class="routes-container">
     <ul class="routes" *ngFor="let enchain of enchainedRoutes">
       <li class="routes__list">
         <p class="list__route-name">{{ enchain.route.name }}</p>
-        <p class="list__route-length">{{ enchain.route.length }}</p>
+        <p class="list__route-length">{{ enchain.route.length }}m</p>
         <p class="list__route-grade">{{ enchain.route.grade }}</p>
         <p class="list__route-media">{{ mediaVotes(enchain.route) }}</p>
-        <app-edit-button [route]="enchain.route"></app-edit-button>
+        <app-edit-button class="edit" [route]="enchain.route"></app-edit-button>
       </li>
     </ul>
   </div>
 </div>
+
+<fieldset>
+  <legend>Leyenda</legend>
+  <p>Lng: metros de la vía</p>
+  <p>Grd: Grado de la vía</p>
+  <p>Med: Media del grado votado por los usuarios</p>
+  <p>Edt: Votar la vía</p>
+</fieldset>
+
 <ng-template #advise>Aún no tienes vías encadenadas</ng-template>
