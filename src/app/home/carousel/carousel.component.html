@@ -1,0 +1,23 @@
+<div class="cards-container" *ngIf="schools && schools.length > 0">
+  <div
+    *ngFor="let school of schools; let i = index"
+    [ngClass]="{ 'image-active': selectedIndex === i }"
+  >
+    <p class="name-school">{{ school.name }}</p>
+    <img
+      routerLink="/school/{{ school._id }}"
+      class="img-schools"
+      src="{{ school.img }}"
+      alt="imagen de escuela de escalada"
+    />
+  </div>
+  <div id="carousel-dot-container">
+    <span
+      *ngFor="let dot of schools; let i = index"
+      class="dot"
+      [ngClass]="{ active: selectedIndex === i }"
+      (click)="selectImage(i)"
+    >
+    </span>
+  </div>
+</div>
