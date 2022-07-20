@@ -1,8 +1,24 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 5px;
 
   img {
-    width: 2rem;
+    width: 2.5rem;
+    cursor: pointer;
   }
+
+  .navbar__icon-enchain {
+    width: 3.1rem;
+  }
+}
+
+.hover:hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+.hover {
+  overflow: hidden;
+  padding: 0.3rem;
 }
