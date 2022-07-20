@@ -1,0 +1,16 @@
+.user-data {
+  display: flex;
+  justify-content: space-around;
+
+  &__img {
+    img {
+      width: 145px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

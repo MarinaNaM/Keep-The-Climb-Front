@@ -1,4 +1,12 @@
-<img src="{{ user.user.img }}" alt="" />
-<p>{{ user.user.name }}</p>
-<p>{{ user.user.email }}</p>
-<p>{{ user.user.address.community }}, {{ user.user.address.province }}</p>
+<div class="user-data">
+  <div class="user-data__img">
+    <img src="{{ user.user.img }}" alt="" />
+  </div>
+  <div class="user-data__info">
+    <p class="user-data__name">{{ user.user.name }}</p>
+    <p class="user-data__email">{{ user.user.email }}</p>
+    <p class="user-data__address">
+      {{ user.user.address.community }}, {{ user.user.address.province }}
+    </p>
+  </div>
+</div>
