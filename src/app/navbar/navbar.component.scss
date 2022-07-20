@@ -13,11 +13,16 @@
   }
 }
 
-.hover:hover img {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
-}
-.hover {
-  overflow: hidden;
-  padding: 0.5rem;
-}
+//sólo para desktop
+// .hover:hover img {
+//   -webkit-transform: scale(1.3);
+//   transform: scale(1.3);
+
+// -moz-box-shadow: inset 0 0 10px #000000;
+// -webkit-box-shadow: inset 0 0 10px #000000;
+// box-shadow: inset 0 0 10px #000000;
+// }
+// .hover {
+//   overflow: hidden;
+//   padding: 0.5rem;
+// }
