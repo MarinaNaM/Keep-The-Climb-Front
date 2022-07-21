@@ -1,3 +1,13 @@
-p {
-  font-family: "Dosis", sans-serif;
+.signIn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+  &__title {
+    margin-top: 70px;
+    font-weight: 400;
+    font-size: 20px;
+  }
 }

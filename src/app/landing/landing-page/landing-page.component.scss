@@ -2,12 +2,37 @@
   display: flex;
   justify-content: space-between;
 }
-// no funciona, investiga
-// html {
-//   background-image: url("https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/pexels-riccardo-303040.jpg?alt=media&token=d3b6117d-96b5-43bf-a51c-b3d40248aa91");
-// }
+
+.background {
+  position: absolute;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.4;
+}
 
 .container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 30px;
+}
+
+.logo {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.logo-name {
+  padding: 3.5rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }

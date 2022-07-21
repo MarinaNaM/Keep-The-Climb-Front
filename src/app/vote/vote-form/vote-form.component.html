@@ -17,4 +17,6 @@
   <button (click)="saveVote(newVote)">Guardar</button>
 </div>
 
-<ng-template #vote>{{ convertNumberToGrade(checkVote().vote) }}</ng-template>
+<ng-template #vote>
+  <span> {{ convertNumberToGrade(checkVote().vote) }}</span></ng-template
+>
