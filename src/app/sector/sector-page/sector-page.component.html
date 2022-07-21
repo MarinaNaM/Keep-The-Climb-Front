@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
-<div *ngIf="sector">
-  <p>{{ sector.name }}</p>
-  <img src="{{ sector.img }}" alt="imagen del sector" />
+<div class="sector" *ngIf="sector">
+  <p class="sector__title">{{ sector.name }}</p>
+  <img class="sector__img" src="{{ sector.img }}" alt="imagen del sector" />
 </div>
-<app-approach-button></app-approach-button>
-<app-routes-list></app-routes-list>
+
+<app-routes-list class="routes-list"></app-routes-list>
