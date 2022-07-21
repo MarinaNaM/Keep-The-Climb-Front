@@ -3,7 +3,18 @@
   justify-content: space-between;
   background-color: #b4c7dc79;
   border: 0.5px solid #b4c7dc;
-  // &__card-name{
 
-  // }
+  .sector__card-name {
+    margin-left: 7px;
+    width: 35%;
+  }
+
+  .sector__card-hoursSun {
+    margin: 0 20px;
+
+    img {
+      width: 25px;
+      margin: 5px;
+    }
+  }
 }

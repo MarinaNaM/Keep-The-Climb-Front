@@ -5,7 +5,44 @@
   <p class="sector__card-routes" routerLink="../../sector/{{ sector._id }}">
     {{ sector.routes.length }}
   </p>
-  <p class="sector__card-hoursSun" routerLink="../../sector/{{ sector._id }}">
-    {{ sector.hoursSun }}
+  <p
+    class="sector__card-hoursSun"
+    routerLink="../../sector/{{ sector._id }}"
+    *ngIf="sector.hoursSun === 'tarde'"
+  >
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2FhoursSun%2Ftarde.svg?alt=media&token=863acf93-e0fa-4e2d-8feb-1cbd11c1d017"
+      alt="tarde"
+    />
+  </p>
+  <p
+    class="sector__card-hoursSun"
+    routerLink="../../sector/{{ sector._id }}"
+    *ngIf="sector.hoursSun === 'mañana'"
+  >
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2FhoursSun%2Fma%C3%B1ana.svg?alt=media&token=a3bbf657-12e1-4700-865f-18c2eabc27b5"
+      alt="mañana"
+    />
+  </p>
+  <p
+    class="sector__card-hoursSun"
+    routerLink="../../sector/{{ sector._id }}"
+    *ngIf="sector.hoursSun === 'todo'"
+  >
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2FhoursSun%2Ftodo.svg?alt=media&token=375e5939-48c2-427c-940f-26429628a429"
+      alt="todo"
+    />
+  </p>
+  <p
+    class="sector__card-hoursSun"
+    routerLink="../../sector/{{ sector._id }}"
+    *ngIf="sector.hoursSun === 'sombra'"
+  >
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2FhoursSun%2Fsombra.svg?alt=media&token=8e5de17f-fff1-4d0c-8b09-a6e2bf58433b"
+      alt="sombra"
+    />
   </p>
 </div>
