@@ -199,8 +199,10 @@ $porcent-vue: 2;
 }
 
 .media-grade {
-  // margin: 70px 0 0 110px;
   width: 108px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-top: 20px;
 }
 
 .global {
@@ -208,4 +210,9 @@ $porcent-vue: 2;
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+}
+
+.mediaRoute {
+  font-weight: 400;
+  font-size: 3rem;
 }

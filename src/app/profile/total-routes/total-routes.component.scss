@@ -199,8 +199,11 @@ $porcent-vue: 2;
 }
 
 .total-routes {
-  // margin: 70px 0 0 110px;
+  font-weight: 600;
+  font-size: 1.3rem;
   width: 108px;
+  display: flex;
+  text-align: center;
 }
 
 .global {
@@ -208,4 +211,9 @@ $porcent-vue: 2;
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+}
+
+.totalRoutes {
+  font-weight: 400;
+  font-size: 3rem;
 }
