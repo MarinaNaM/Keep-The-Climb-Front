@@ -8,6 +8,11 @@
   }
 }
 /* Reset de los margin y paddings de todas las etiquetas */
+
+button {
+  cursor: pointer;
+}
+
 * {
   margin: 0;
   padding: 0;

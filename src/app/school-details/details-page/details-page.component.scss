@@ -1,0 +1,29 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+
+  .sub-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    &__button {
+      position: absolute;
+      left: 40px;
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+  }
+}

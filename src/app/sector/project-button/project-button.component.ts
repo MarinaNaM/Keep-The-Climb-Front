@@ -74,4 +74,15 @@ export class ProjectButtonComponent implements OnInit {
       this.router.navigate(['signIn']);
     }
   }
+
+  isProjected() {
+    const findRoute = this.user.user.routes.find(
+      (item) => item.route._id === this.route._id
+    );
+    if (findRoute) {
+      return findRoute.isProject;
+    } else {
+      return false;
+    }
+  }
 }

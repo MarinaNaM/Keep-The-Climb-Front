@@ -4,7 +4,25 @@ img {
 
 .route__card {
   display: flex;
-  justify-content: space-between;
   background-color: #b4c7dc79;
   border: 0.5px solid #b4c7dc;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .route__card-name {
+    margin: 0 0 0 10px;
+    width: 38%;
+  }
+
+  .route__card-grade {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 3px;
+      img {
+        width: 9px;
+      }
+    }
+  }
 }

@@ -69,10 +69,22 @@ export class EnchainButtonComponent implements OnInit {
             this.store.dispatch(
               userActions.updateUser({ data: { user: data } })
             );
+            this.user = { user: data, token: this.user.token };
           },
         });
     } else {
       this.router.navigate(['signIn']);
+    }
+  }
+
+  isEnchained() {
+    const findRoute = this.user.user.routes.find(
+      (item) => item.route._id === this.route._id
+    );
+    if (findRoute) {
+      return findRoute.isEnchain;
+    } else {
+      return false;
     }
   }
 }

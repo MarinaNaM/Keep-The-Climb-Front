@@ -1,0 +1,33 @@
+.caption {
+  display: flex;
+  justify-content: space-between;
+
+  &__sectors {
+    width: 35%;
+  }
+
+  &__sectors {
+    margin: 0 0 0 7px;
+  }
+
+  &__sun {
+    margin: 0 7px 0 0;
+  }
+}
+
+fieldset {
+  border: solid 1px black;
+  margin: 30px 50px;
+  padding: 5px;
+
+  p {
+    margin-bottom: 3px;
+  }
+
+  img {
+    position: absolute;
+    right: 160px;
+    width: 17px;
+    margin: 4px 0;
+  }
+}

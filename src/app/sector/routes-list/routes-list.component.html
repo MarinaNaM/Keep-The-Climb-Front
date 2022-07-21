@@ -1,3 +1,10 @@
+<div class="caption">
+  <p class="caption__name">Nombre</p>
+  <p class="caption__lng">Lng</p>
+  <p class="caption__grd">Grd</p>
+  <p class="caption__enchain">Enc</p>
+  <p class="caption__project">Proj</p>
+</div>
 <ol class="routes" *ngIf="sector">
   <li class="routes__list" *ngFor="let route of sector.routes">
     <app-routes-card [route]="route"></app-routes-card>

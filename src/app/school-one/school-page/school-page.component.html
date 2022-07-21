@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
-<div *ngIf="school">
-  <p>{{ school.name }}</p>
-  <img src="{{ school.img }}" alt="" />
+<div class="school" *ngIf="school">
+  <p class="school__name">{{ school.name }}</p>
+  <img class="school__img" src="{{ school.img }}" alt="" />
+  <app-info-button class="school__info"></app-info-button>
 </div>
-<app-info-button></app-info-button>
 
 <app-sectors></app-sectors>

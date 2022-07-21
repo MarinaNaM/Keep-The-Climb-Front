@@ -1,0 +1,23 @@
+.school {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 20px;
+
+  &__name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem;
+  }
+
+  &__img {
+    max-width: 80%;
+  }
+
+  &__info {
+    position: absolute;
+    right: 62px;
+    top: 122px;
+  }
+}

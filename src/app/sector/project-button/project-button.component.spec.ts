@@ -67,6 +67,13 @@ describe('ProjectButtonComponent', () => {
 
     fixture = TestBed.createComponent(ProjectButtonComponent);
     component = fixture.componentInstance;
+    component.route = {
+      _id: '1234',
+      name: '',
+      length: 2,
+      grade: '2',
+      voteGrade: [{ user: '123456', vote: 3 }],
+    };
     fixture.detectChanges();
   });
 

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { valueToGrade } from 'src/app/core/helpers/gradeValues';
 import { iSchool } from 'src/app/core/models/school-model';
 import { iSector } from 'src/app/core/models/sector-model';
 import { AppState } from 'src/app/store/app.state';
@@ -35,6 +36,7 @@ export class RoutesGradeComponent implements OnInit {
     sectors.forEach((item) => {
       count += item.routes.length;
     });
+
     return count;
   }
 }

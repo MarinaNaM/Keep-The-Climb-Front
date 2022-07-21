@@ -67,6 +67,13 @@ describe('EnchainButtonComponent', () => {
 
     fixture = TestBed.createComponent(EnchainButtonComponent);
     component = fixture.componentInstance;
+    component.route = {
+      _id: '1234',
+      name: '',
+      length: 2,
+      grade: '2',
+      voteGrade: [{ user: '123456', vote: 3 }],
+    };
     fixture.detectChanges();
   });
 
@@ -87,6 +94,7 @@ describe('EnchainButtonComponent', () => {
       component.user.user.routes = [
         {
           route: {
+            _id: '123',
             name: '',
             length: 1,
             grade: '',
