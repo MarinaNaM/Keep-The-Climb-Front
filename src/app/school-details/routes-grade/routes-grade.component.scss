@@ -1,0 +1,22 @@
+.left {
+  position: absolute;
+  left: 5px;
+  top: 210px;
+  height: 1px;
+  background-color: black;
+  width: 160px;
+}
+
+.right {
+  position: absolute;
+  right: 5px;
+  top: 210px;
+  height: 1px;
+  background-color: black;
+  width: 160px;
+}
+
+.routes {
+  font-weight: 600;
+  font-size: 20px;
+}
