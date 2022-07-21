@@ -1,5 +1,39 @@
+<div class="caption">
+  <p class="caption__sectors">Sectores</p>
+  <p class="caption__routes">Nº Vías</p>
+  <p class="caption__sun">Horas de sol</p>
+</div>
+
 <ul class="sectors" *ngIf="school">
   <li class="sectors__list" *ngFor="let sector of school.sectors">
     <app-sector-card [sector]="sector"></app-sector-card>
   </li>
 </ul>
+
+<fieldset>
+  <legend>Leyenda</legend>
+  <p>
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2FhoursSun%2Ftarde.svg?alt=media&token=863acf93-e0fa-4e2d-8feb-1cbd11c1d017"
+      alt=""
+    />Sol por la tarde
+  </p>
+  <p>
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2FhoursSun%2Fma%C3%B1ana.svg?alt=media&token=a3bbf657-12e1-4700-865f-18c2eabc27b5"
+      alt=""
+    />Sol por la mañana
+  </p>
+  <p>
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2FhoursSun%2Ftodo.svg?alt=media&token=375e5939-48c2-427c-940f-26429628a429"
+      alt=""
+    />Sol todo el día
+  </p>
+  <p>
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-f8c07.appspot.com/o/icons%2FhoursSun%2Fsombra.svg?alt=media&token=8e5de17f-fff1-4d0c-8b09-a6e2bf58433b"
+      alt=""
+    />Sombra todo el día
+  </p>
+</fieldset>
