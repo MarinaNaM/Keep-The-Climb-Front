@@ -1,0 +1,21 @@
+.sector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 23px;
+    font-weight: 600;
+    margin: 15px 0;
+  }
+
+  &__img {
+    max-width: 90%;
+  }
+}
+
+.approach {
+  position: absolute;
+  top: 102px;
+  right: 29px;
+}
