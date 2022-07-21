@@ -1,6 +1,12 @@
 <app-navbar></app-navbar>
-<p *ngIf="school">{{ school.name }}</p>
-<app-back-button></app-back-button>
-<app-routes-grade></app-routes-grade>
-<app-period></app-period>
-<app-map></app-map>
+<div class="details-container">
+  <div class="sub-container">
+    <p class="sub-container__title" *ngIf="school">{{ school.name }}</p>
+    <app-back-button class="sub-container__button"></app-back-button>
+  </div>
+
+  <!-- <app-routes-grade class="routes"></app-routes-grade> -->
+
+  <app-period class="details"></app-period>
+  <app-map></app-map>
+</div>
