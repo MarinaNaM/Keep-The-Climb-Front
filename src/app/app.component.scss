@@ -1,3 +1,13 @@
-img {
-  width: 35%;
+// img {
+//   width: 35%;
+// }
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+
+  &footer {
+    position: fixed;
+  }
 }

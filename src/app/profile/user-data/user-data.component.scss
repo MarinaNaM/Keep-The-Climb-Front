@@ -1,0 +1,17 @@
+.user-data {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+
+  &__img {
+    img {
+      max-width: 145px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

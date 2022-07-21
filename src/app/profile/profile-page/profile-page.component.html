@@ -1,7 +1,11 @@
 <app-navbar></app-navbar>
-<app-edit-button></app-edit-button>
+<app-edit-button class="edit"></app-edit-button>
 <app-user-data [user]="user"></app-user-data>
-<app-total-routes></app-total-routes>
-<app-media-grades></app-media-grades>
-<app-logout-button></app-logout-button>
-<app-delete-button [user]="user"></app-delete-button>
+<div class="statistics">
+  <app-total-routes></app-total-routes>
+  <app-media-grades></app-media-grades>
+</div>
+<div class="buttons">
+  <app-logout-button class="button-logout"></app-logout-button>
+  <app-delete-button class="button-delete" [user]="user"></app-delete-button>
+</div>

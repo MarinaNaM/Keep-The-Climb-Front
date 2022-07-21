@@ -1,10 +1,8 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { AppState } from 'src/app/store/app.state';
 
-import { SchoolsCardComponent } from './schools-card.component';
+import { CarouselComponent } from './carousel.component';
 
 const mockInitialState: AppState = {
   schools: { schools: [] },
@@ -39,24 +37,30 @@ const mockInitialState: AppState = {
   },
 };
 
-describe('SchoolsCardComponent', () => {
-  let component: SchoolsCardComponent;
-  let fixture: ComponentFixture<SchoolsCardComponent>;
+describe('CarouselComponent', () => {
+  let component: CarouselComponent;
+  let fixture: ComponentFixture<CarouselComponent>;
   let initialState = mockInitialState;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, HttpClientTestingModule],
-      declarations: [SchoolsCardComponent],
+      declarations: [CarouselComponent],
       providers: [provideMockStore({ initialState })],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SchoolsCardComponent);
+    fixture = TestBed.createComponent(CarouselComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('When select image is called with a number', () => {
+    it('selected index should be the number ', () => {
+      component.selectImage(1);
+      expect(component.selectedIndex).toBe(1);
+    });
   });
 });

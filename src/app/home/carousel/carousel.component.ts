@@ -3,12 +3,14 @@ import { Store } from '@ngrx/store';
 import { iSchool, iSchoolState } from 'src/app/core/models/school-model';
 
 @Component({
-  selector: 'app-schools-card',
-  templateUrl: './schools-card.component.html',
-  styleUrls: ['./schools-card.component.scss'],
+  selector: 'app-carousel',
+  templateUrl: './carousel.component.html',
+  styleUrls: ['./carousel.component.scss'],
 })
-export class SchoolsCardComponent implements OnInit {
+export class CarouselComponent implements OnInit {
   schools!: ReadonlyArray<iSchool>;
+  selectedIndex = 0;
+
   constructor(public store: Store<{ schools: iSchoolState }>) {}
 
   ngOnInit(): void {
@@ -19,5 +21,9 @@ export class SchoolsCardComponent implements OnInit {
           this.schools = data.schools;
         },
       });
+  }
+
+  selectImage(index: number): void {
+    this.selectedIndex = index;
   }
 }

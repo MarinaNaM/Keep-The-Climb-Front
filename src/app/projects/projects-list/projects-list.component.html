@@ -1,17 +1,24 @@
 <h2 class="title">Mis proyectos</h2>
-<div class="caption">
-  <p>Nombre</p>
-  <p>Longitud</p>
-  <p>Grado</p>
-  <p>Encadenada</p>
+<div *ngIf="projectsRoutes.length > 0; else advise">
+  <div class="caption">
+    <p class="caption__name">Nombre</p>
+    <p class="caption__lng">Longitud</p>
+    <p class="caption__grd">Grado</p>
+    <p class="caption__ench">Encadenada</p>
+  </div>
+  <div class="routes-container">
+    <ul class="routes">
+      <li class="routes__list" *ngFor="let project of projectsRoutes">
+        <p class="list__route-name">{{ project.route.name }}</p>
+        <p class="list__route-length">{{ project.route.length }}m</p>
+        <p class="list__route-grade">{{ project.route.grade }}</p>
+        <app-enchain-button
+          class="enchain"
+          [route]="project.route"
+        ></app-enchain-button>
+      </li>
+    </ul>
+  </div>
 </div>
-<div class="routes-container">
-  <ul class="routes">
-    <li class="routes__list" *ngFor="let project of projectsRoutes">
-      <p class="list__route-name">{{ project.route.name }}</p>
-      <p class="list__route-length">{{ project.route.length }}</p>
-      <p class="list__route-grade">{{ project.route.grade }}</p>
-      <app-enchain-button [route]="project.route"></app-enchain-button>
-    </li>
-  </ul>
-</div>
+
+<ng-template #advise>Aún no tienes proyectos</ng-template>

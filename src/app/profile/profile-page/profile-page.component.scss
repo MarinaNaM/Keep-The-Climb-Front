@@ -1,0 +1,22 @@
+.statistics {
+  display: flex;
+  justify-content: space-around;
+}
+
+.edit {
+  position: absolute;
+  left: 345px;
+  top: 122px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-logout,
+.button-delete {
+  margin: 2rem;
+}
