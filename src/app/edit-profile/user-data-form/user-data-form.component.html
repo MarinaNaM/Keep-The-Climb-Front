@@ -14,13 +14,21 @@
     placeholder="Email"
     [(ngModel)]="updatedUserData.email"
   />
-  <input
+  <!-- <input
     class="form__img"
     type="text"
     name="image"
     placeholder="URL de la imagen"
     [(ngModel)]="updatedUserData.img"
+  /> -->
+
+  <input
+    type="file"
+    name="upload"
+    placeholder="Foto de perfil"
+    [(ngModel)]="updatedUserData.img"
   />
+
   <input
     class="form__community"
     type="text"

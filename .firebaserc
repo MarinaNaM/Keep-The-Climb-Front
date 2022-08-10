@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "final-project-f8c07"
+  },
+  "targets": {
+    "final-project-f8c07": {
+      "hosting": {
+        "Marina_Navarrete_Front-Final-Project-202205-MAD": [
+          "final-project-f8c07"
+        ]
+      }
+    }
+  }
+}

@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Marina_Navarrete_Front-Final-Project-202205-MAD:build:production",
+            "firebaseProject": "final-project-f8c07",
+            "firebaseHostingSite": "final-project-f8c07"
+          }
         }
       }
     }
